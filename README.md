@@ -13,7 +13,7 @@ STT, 양방향 다국어 번역과 TTS+보이스클론
 | 문하현 | nlp 및 llm 기반 번역 모델 담당, 발표 및 ppt 제작 |
 # 4. 주제 선정
 - 기획 배경
-<img width="634" height="396" alt="image" src="https://github.com/user-attachments/assets/761e3e45-bf18-4caf-a445-7628a601b042"/>
+<img width="634" height="396" alt="image" src="https://github.com/user-attachments/assets/761e3e45-bf18-4caf-a445-7628a601b042"/> <br>
 - 국내 거주 외국인 수가 매년 꾸준히 증가하고 있음<br> 
 - 특히 안산 다문화거리는 한국에서 외국인 거주 비율이 가장 높은 곳이고 안산시 전체의 외국인 주민 수도 전국 지자체 중 최고 수준<br>
 -> 따라서 거주 외국인 수가 증가함에 따라 주변 상권의 손님들은 외국인이 많을 것이고 소통에 어려움을 겪는 소상공인도 분명히 있을 것이다 <br>
