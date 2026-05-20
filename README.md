@@ -22,7 +22,7 @@ STT, 양방향 다국어 번역과 TTS+보이스클론
 - STT : 음성 → 텍스트 변환
 - nlp 및 llm : 다국어 번역
 - TTS : 기본 음성 생성
-- VoiceClone : 참조 음성 기반 보이스클론
+- VoiceClone : 참조 음성 기반 보이스클론 <br>
 // TTS + VoiceClone
 - 기능 및 결과 시각화
 # 6. 기술 스택
