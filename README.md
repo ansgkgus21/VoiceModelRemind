@@ -11,7 +11,7 @@ STT, 양방향 다국어 번역과 TTS+보이스클론
 | 박은희 | tts 모델 담당, 음성 데이터셋 수집 및 전처리 |
 | 정재승 | stt 모델 담당, 프로젝트 방향성 제시 및 진행 |
 | 문하현 | nlp 및 llm 기반 번역 모델 담당, 발표 및 ppt 제작 |
-# 4. 주제 선정
+# 4. 주제 선정 - 페르소나 배경 설정
 - 기획 배경
 <img width="634" height="396" alt="image" src="https://github.com/user-attachments/assets/761e3e45-bf18-4caf-a445-7628a601b042"/>
 
@@ -20,12 +20,17 @@ STT, 양방향 다국어 번역과 TTS+보이스클론
 -> 따라서 거주 외국인 수가 증가함에 따라 주변 상권의 손님들은 외국인이 많을 것이고 소통에 어려움을 겪는 소상공인도 분명히 있을 것이다 <br>
 
 # 5. 주요 기능
-- STT : 음성 → 텍스트 변환
-- nlp 및 llm : 다국어 번역
-- TTS : 기본 음성 생성
-- VoiceClone : 참조 음성 기반 보이스클론 <br>
-// TTS + VoiceClone
-- 기능 및 결과 시각화
+- STT : 음성 → 텍스트 변환 (Fast-Whisper medium)
+  - 핵심 키워드(keyword mapper)를 통해 주문 슬롯을 만들어 직원에게 전달 + 외국인 손님의 말을 번역하여 화면에 같이 띄우게 하기
+- nlp 및 llm : 다국어 번역 (OpenAI / M2M100)
+  - OpenAI를 사용하여 외국어를 일상에서 사용하는 구어체로 번역, M2M100(fallback)은 네트워크 연결 등 OpenAI 연결이 안될 때 OpenAI 대체
+- TTS : 기본 음성 생성 (Edge-TTS)
+  - 페르소나 기반의 중년여성(50대)의 음색을 설정
+- VoiceClone(선택) : 참조 음성 기반 보이스클론 (OpenVoiceV2)
+  - TTS로 생성한 중년 여성 목소리의 특성에 사장님 목소리의 특성을 일정 비율로 합쳐서 기본 음성에 사장님 목소리 톤을 입히기(보이스클론이 작동하지 않으면 TTS로 생성한 기본 음성만 사용 가능) <br>
+
+// TTS + VoiceClone(선택)
+- 기능 및 결과 시각화 (Gradio)
 # 6. 기술 스택
 - 데이터셋 : HuggingFace, AI-HUB
 - 모델 : HuggingFace
@@ -34,6 +39,11 @@ STT, 양방향 다국어 번역과 TTS+보이스클론
 - Collaborate : GITHUB, Figma
 # 7. 시스템 구조
 <img width="1505" height="847" alt="KakaoTalk_20260429_152807279" src="https://github.com/user-attachments/assets/f1d96084-3a72-4ede-bb42-584efb02542f" /><br>
+
+- 외국인 손님 - 한국인 직원 실시간 다국어 주문 시스템
+- 전체 흐름 :
+    1. 외국인 손님 -> 한국인 직원 : 음성입력 => STT((외국어)음성 -> 텍스트 : Fast-Whisper medium) => 번역(텍스트 -> 한국어 : OpenAI / M2M100)
+                
 # 8. 실행 화면
 <img width="1835" height="703" alt="KakaoTalk_20260429_094531096" src="https://github.com/user-attachments/assets/8e687cc8-5991-49a8-ba81-d3454cb7cdbc" /><br>
 <img width="1831" height="918" alt="KakaoTalk_20260429_094531096_01" src="https://github.com/user-attachments/assets/a1e35b27-337e-401f-b5cc-478b388b21df" />
@@ -43,6 +53,7 @@ ex)<br>
   1 FREE : M2M100 (로컬, 무료) <br>
   2 BASIC : OpenAI 번역 + 기본 TTS <br>
   3 PREMIUM : OPENAI + 보이스클론 + 전 언어
-# 10. 프로젝트 회고
+# 10. 트러블 슈팅
+
 
 
